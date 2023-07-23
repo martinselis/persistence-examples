@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+
+    <persistence-unit name="Users">
+        <class>org.example.JDO.UserDAO</class>
+        <exclude-unlisted-classes/>
+        <properties>
+            <property name="javax.jdo.PersistenceManagerFactoryClass" value="org.datanucleus.api.jdo.JDOPersistenceManagerFactory"/>
+
+            <property name="javax.jdo.option.ConnectionURL" value="jdbc:postgresql://localhost:5432/users"/>
+            <property name="javax.jdo.option.ConnectionUserName" value="postgres"/>
+            <property name="javax.jdo.option.ConnectionPassword" value="mysecretpassword"/>
+
+            <property name="datanucleus.schema.autoCreateAll" value="true"/>
+            <property name="datanucleus.identifier.case" value="lowercase"/>
+        </properties>
+    </persistence-unit>
+</persistence>
